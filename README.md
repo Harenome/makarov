@@ -1,6 +1,14 @@
 Makarov
 =======
 
+[![Build Status][]][Travis CI Makarov] [![Coverage Status][]][Coveralls Makarov]
+================================================================================
+
+[Coveralls Makarov]: https://coveralls.io/r/Harenome/makarov
+[Coverage Status]: https://img.shields.io/coveralls/Harenome/makarov.svg
+[Travis CI Makarov]: https://travis-ci.org/Harenome/makarov
+[Build Status]: https://travis-ci.org/Harenome/makarov.svg?branch=master
+
 Projet Makarov. Chaînes de Markov.
 
 Récupérer Makarov

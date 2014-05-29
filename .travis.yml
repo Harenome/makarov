@@ -1,8 +1,14 @@
 language: python
 python:
     - "2.6"
+before_install:
+    - pip install coverage
+    - pip install coveralls
 script:
     - makarov/markov_chain.py
+    - coverage run --source=makarov makarov/markov_chain.py
+after_success:
+    - coveralls
 notifications:
-    on_success: change
-    on_failyre: change
+    - on_success: change
+    - on_failure: change
