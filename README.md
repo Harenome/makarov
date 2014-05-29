@@ -9,6 +9,12 @@ Récupérer Makarov
 $ git clone https://github.com/Harenome/makarov.git
 ```
 
+Lancer Makarov
+--------------
+```bash
+$ ./makarov.py
+```
+
 License
 -------
 Copyright © 2014 MEYER Jérémy, RAZANAJATO RANAIVOARIVONY Harenome, WHILHELM Stan

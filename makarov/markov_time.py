@@ -2,12 +2,12 @@
 
 import time
 import sys
-import markov
+from markov_chain import MarkovChain
 from getch import getch
 
-def read_times():
+def __read_times():
     """Read times between keystrokes and save them in a Markov chain."""
-    chain = markov.Markov()
+    chain = MarkovChain()
     a = getch()
     sys.stdout.write(a)
     while a != '\r':
@@ -22,23 +22,27 @@ def read_times():
 
     return chain
 
-# Run.
-if __name__ == "__main__":
+def compare_users():
+    """Compare two users."""
     USER_1 = "Bro 1"
     USER_2 = "Bro 2"
     COMPARISON = " != "
 
-    markov.Markov.set_epsilon = 0.1
+    MarkovChain.set_epsilon = 0.1
 
     print USER_1
-    chain_1 = read_times()
+    chain_1 = __read_times()
     print USER_2
-    chain_2 = read_times()
-    if markov.Markov.are_similiar(chain_1, chain_2):
+    chain_2 = __read_times()
+    if MarkovChain.are_similiar(chain_1, chain_2):
         COMPARISON = " == "
 
-    print USER_1 + COMPARISON + USER_2 + "\n"
+    print "\n" + USER_1 + COMPARISON + USER_2
     print USER_1 + ":"
     chain_1.display()
     print USER_2 + ":"
     chain_2.display()
+
+# Run.
+if __name__ == "__main__":
+    compare_users()

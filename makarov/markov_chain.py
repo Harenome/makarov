@@ -2,7 +2,7 @@
 
 import math
 
-class Markov:
+class MarkovChain:
     """Markov chain.
 
     EPSILON:
@@ -81,7 +81,7 @@ class Markov:
         result = False
         self.compute_averages()
         chain.compute_averages()
-        if isinstance(chain, Markov):
+        if isinstance(chain, MarkovChain):
             count = 0
             error = 0
             for key_1 in self.__totals.keys():
@@ -92,7 +92,7 @@ class Markov:
                             error += self.__difference(key_1, key_2, chain)
             if count != 0:
                 error /= count
-                result = error <= Markov.EPSILON
+                result = error <= MarkovChain.EPSILON
         return result
 
     def total(self):
@@ -111,13 +111,14 @@ class Markov:
 
     @staticmethod
     def set_epsilon(epsilon):
-        Markov.EPSILON = epsilon
+        """Change MarkovChain.EPSILON."""
+        MarkovChain.EPSILON = epsilon
 
 
 # Stupid test.
 if __name__ == "__main__":
-    MARK_1 = Markov()
-    MARK_2 = Markov()
+    MARK_1 = MarkovChain()
+    MARK_2 = MarkovChain()
     MARK_1.add_value('a', 'b', 0.1)
     MARK_1.add_value('a', 'b', 1.5)
     MARK_1.add_value('b', 'b', 0.1)
