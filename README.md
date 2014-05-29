@@ -1,8 +1,6 @@
 Makarov
 =======
-
 [![Build Status][]][Travis CI Makarov] [![Coverage Status][]][Coveralls Makarov]
-================================================================================
 
 [Coveralls Makarov]: https://coveralls.io/r/Harenome/makarov
 [Coverage Status]: https://img.shields.io/coveralls/Harenome/makarov.svg
