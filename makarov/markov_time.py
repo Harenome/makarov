@@ -1,12 +1,27 @@
 #!/usr/bin/python
 
+# This program is free software. It comes without any warranty, to
+# the extent permitted by applicable law. You can redistribute it
+# and/or modify it under the terms of the Do What The Fuck You Want
+# To Public License, Version 2, as published by Sam Hocevar. See
+# http://www.wtfpl.net/ for more details.
+
 import time
 import sys
 from markov_chain import MarkovChain
 from getch import getch
 
 class MarkovTimeReader:
-    """Class to read times between keystrokes and return a Markov chain."""
+    """Class to read times between keystrokes and return a Markov chain.
+
+    - __chain:
+        MarkovChain used for computations.
+    - __text:
+        List used to store input characters.
+    - __times:
+        List used to store times.
+    """
+
     def __init__(self):
         """Init."""
         self.__chain = MarkovChain()
@@ -33,14 +48,23 @@ class MarkovTimeReader:
                 self.__chain.add_value(ante_previous, previous, - old_time)
 
     def __normal_character(self, input_character, interval):
-        """When the input character is a normal character."""
+        """When the input character is a normal character.
+        - input_character:
+            Input character.
+        - interval:
+            Time interval.
+        """
         if self.__text:
             previous = self.__text[-1]
             self.__chain.add_value(previous, input_character, interval)
             self.__times.append(interval)
 
     def read(self):
-        """Read. The object is reset."""
+        """Read characters.
+        Note that the object's internals are reset before reading characters.
+        (Meaning it is possible to read countless MarkovChain using the same
+        MarkovTimeReader.)
+        """
         # Reset the object.
         self.__init__()
 
@@ -61,13 +85,19 @@ class MarkovTimeReader:
         return self.__chain
 
 def compare_users(verbose):
-    """Compare two users."""
+    """Compare two users.
+    - verbose:
+        Enable or disable verbose printing.
+    Each user will in turn have to type his text. Do not hit the ENTER (or
+    RETURN) key until you are done, as it is how the input is validated.
+    """
     USER_1 = "Bro 1"
     USER_2 = "Bro 2"
     COMPARISON = " != "
 
     MarkovChain.set_epsilon = 0.3
 
+    print "Please type your texts. Hit the ENTER key once you have finished typing."
     reader = MarkovTimeReader()
     print USER_1
     chain_1 = reader.read()

@@ -17,8 +17,29 @@ $ git clone https://github.com/Harenome/makarov.git
 
 Lancer Makarov
 --------------
+Au choix:
 ```bash
-$ ./makarov.py
+$ ./makarov.py [--verbose]
+$ ./run [--verbose]
+```
+Chaque utilisateur devra taper son texte, et le valider en appuyant sur
+```ENTRÉE```.
+
+Lire l'aide depuis l'interpréteur
+---------------------------------
+```bash
+$ python
+```
+Puis dans l'interpréteur:
+```python
+>>> from makarov import *
+>>> from makarov.markov_chain import MarkovChain
+>>> from makarov.markov_time import MarkovTimeReader
+>>> help(getch)
+>>> help(markov_chain)
+>>> help(markov_time)
+>>> help(MarkovChain)
+>>> help(MarkovTimeReader)
 ```
 
 License
