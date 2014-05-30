@@ -22,8 +22,7 @@ Au choix:
 $ ./makarov.py [--verbose | --version]
 $ ./run [--verbose | --version]
 ```
-Chaque utilisateur devra taper son texte, et le valider en appuyant sur
-```ENTRÉE```.
+Chaque utilisateur devra taper son texte, et le valider en appuyant sur ```ENTRÉE```.
 
 Lire l'aide depuis l'interpréteur
 ---------------------------------
