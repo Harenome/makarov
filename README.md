@@ -19,8 +19,8 @@ Lancer Makarov
 --------------
 Au choix:
 ```bash
-$ ./makarov.py [--verbose]
-$ ./run [--verbose]
+$ ./makarov.py [--verbose | --version]
+$ ./run [--verbose | --version]
 ```
 Chaque utilisateur devra taper son texte, et le valider en appuyant sur
 ```ENTRÉE```.
