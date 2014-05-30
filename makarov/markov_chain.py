@@ -79,9 +79,9 @@ class MarkovChain:
     def is_similiar(self, chain):
         """Determine whether two chains are similiar."""
         result = False
-        self.compute_averages()
-        chain.compute_averages()
         if isinstance(chain, MarkovChain):
+            self.compute_averages()
+            chain.compute_averages()
             count = 0
             error = 0
             for key_1 in self.__totals.keys():
