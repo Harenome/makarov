@@ -10,6 +10,7 @@ import sys
 from makarov.markov_time import compare_users
 
 if __name__ == "__main__":
+    epsilon = 0.1
     verbosity = False
 
     if len(sys.argv) > 2:
@@ -18,4 +19,4 @@ if __name__ == "__main__":
     elif len(sys.argv) > 1 and sys.argv[1] == "--verbose":
         verbosity = True
 
-    compare_users(verbosity)
+    compare_users(epsilon, verbosity)

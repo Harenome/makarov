@@ -84,7 +84,7 @@ class MarkovTimeReader:
 
         return self.__chain
 
-def compare_users(verbose):
+def compare_users(epsilon, verbose):
     """Compare two users.
     - verbose:
         Enable or disable verbose printing.
@@ -95,7 +95,7 @@ def compare_users(verbose):
     USER_2 = "Bro 2"
     COMPARISON = " != "
 
-    MarkovChain.set_epsilon = 0.3
+    MarkovChain.set_epsilon = epsilon
 
     print "Please type your texts. Hit the ENTER key once you have finished typing."
     reader = MarkovTimeReader()
@@ -109,7 +109,8 @@ def compare_users(verbose):
     print "\n" + USER_1 + COMPARISON + USER_2
 
     if verbose:
-        print "\nMarkov chains:"
+        print "\nEpsilon used: " + str(epsilon)
+        print "Markov chains:"
         print USER_1 + ":"
         chain_1.display()
         print USER_2 + ":"
@@ -117,7 +118,8 @@ def compare_users(verbose):
 
 # Run.
 if __name__ == "__main__":
+    epsilon = 0.1
     verbosity = False
     if len(sys.argv) > 1 and sys.argv[1] == "--verbose":
         verbosity = True
-    compare_users(verbosity)
+    compare_users(epsilon, verbosity)

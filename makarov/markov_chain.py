@@ -22,7 +22,7 @@ class MarkovChain:
         Threshold used in comparisons between Markov chains.
     """
 
-    EPSILON = 0.05
+    EPSILON = 0.5
 
     def __init__(self):
         """Initialize a chain."""
