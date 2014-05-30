@@ -42,6 +42,12 @@ Puis dans l'interpréteur:
 >>> help(MarkovTimeReader)
 ```
 
+Archiver
+--------
+```bash
+$ git archive --format=tar HEAD | gzip >makarov.tar.gz
+```
+
 License
 -------
 Copyright © 2014 MEYER Jérémy, RAZANAJATO RANAIVOARIVONY Harenome, WHILHELM Stan
